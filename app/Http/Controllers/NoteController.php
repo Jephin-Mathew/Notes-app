@@ -29,8 +29,8 @@ public function index()
         ->when($q !== '', function ($query) use ($q) {
             $query->where('title', 'like', '%' . $q . '%');
         })
-        // ->oldest()
-        ->latest()
+
+        ->oldest()
         ->paginate(10)
         ->withQueryString();
 
